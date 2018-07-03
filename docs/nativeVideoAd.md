@@ -22,38 +22,52 @@
 <!-- start: trek video ad -->
 <div>
   <style>
-    [data-trek-cloak] { display: none; }
+    [data-trek-cloak] {
+      display: none;
+    }
+
     [data-trek="URL"],
     [data-trek="URL"]:hover {
       display: block;
       text-decoration: none !important;
       font-size: 14px;
       color: #333;
-      padding: 4px;	
+      padding: 5px 10px;
+      background: #eee;
     }
+
     [data-trek="URL"] td {
       vertical-align: center;
-    }	
+    }
+
     [data-trek="SPONSER"],
     [data-trek="ADVERTISER_NAME"] {
       font-size: 12px;
-      color: #caccce;
+      color: #d4d4d4;
     }
+
     [data-trek="TITLE"] {
       font-size: 14px;
+      color: #666666;
+      letter-spacing: 0.05em;
+      padding: 3px 0;
+      text-align: justify;
     }
+
     [data-trek="TEXT"] {
       color: #AAA;
     }
+
     [data-trek="CALL_TO_ACTION"] {
-      border: 1px solid #333;
-      color:#333;
-      padding: 0px 16px;
+      border: 1px solid #ababab;
+      color: #fff;
+      padding: 2px 16px;
+      background: #ababab;
+      font-size: 13px;
+      letter-spacing: 0.05em;
     }
   </style>
-
-  <!-- trek video ad container -->
-  <div id="native-video-1" data-trek-cloak>
+  <div id="article-video" data-trek-cloak>
     <!-- video placement -->
     <video></video>
     <!-- ad info -->
@@ -71,23 +85,18 @@
       </table>
     </a>
   </div>
-
-  <!-- script -->
   <script>
     AotterTrek('nativeVideoAd', {
-      selector: '#native-video-1',
+      selector: '#article-video',
       onAdLoad: function(node) {
         //廣告載入成功時的callback
       },
       onAdFail: function(node) {
         //廣告載入失敗時的callback
       }
-    })
+    });
   </script>
-  <!-- end: script -->
 </div>
-<!-- end: trek video ad -->
-
 ```
 
 廣告上架後，我們會審核以列下必填欄位是否有正確出現在原生廣告版面中。
