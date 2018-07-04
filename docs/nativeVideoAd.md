@@ -1,4 +1,5 @@
-## 原生影片廣告
+# 原生影片廣告
+## 預設版型安裝方式
 
 在 `head` 中加入以下程式碼
 
@@ -28,8 +29,6 @@
     AotterTrek('nativeVideoAd', {
       selector: '#video-default-template',
       useDefaultTemplate: true,
-      onAdLoad: function() {},
-      onAdFail: function() {}
     })
   </script>
   <!-- end: script -->
@@ -45,8 +44,6 @@
     AotterTrek('nativeVideoAd', {
       selector: '#video-default-template',
       useDefaultTemplate: true,
-      onAdLoad: function() {},
-      onAdFail: function() {}
     })
   </script>
   <!-- end: script -->
@@ -62,8 +59,6 @@
     AotterTrek('nativeVideoAd', {
       selector: '#video-default-template',
       useDefaultTemplate: true,
-      onAdLoad: function() {},
-      onAdFail: function() {}
     })
   </script>
   <!-- end: script -->
@@ -91,8 +86,27 @@
     AotterTrek('nativeVideoAd', {
       selector: '#video-default-template',
       useDefaultTemplate: true,
-      onAdLoad: function() {},
-      onAdFail: function() {}
+    })
+  </script>
+  <!-- end: script -->
+```
+
+## 廣告載入成功、失敗的callback
+
+```html
+  <!-- trek video ad container -->
+  <div id="video-default-template"></div>
+  <!-- script -->
+  <script>
+    AotterTrek('nativeVideoAd', {
+      selector: '#video-default-template',
+      useDefaultTemplate: true,
+      onAdLoad: function(node) {
+        //廣告載入成功時的callback
+      },
+      onAdFail: function(node) {
+        //廣告載入失敗時的callback
+      }
     })
   </script>
   <!-- end: script -->
