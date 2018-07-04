@@ -1,4 +1,4 @@
-# 原生影片廣告
+## 原生影片廣告
 
 在 `head` 中加入以下程式碼
 
@@ -17,7 +17,89 @@
 <!-- end: trek sdk -->
 ```
 
-在 `body` 中加入以下程式碼: 
+在 `body` 中加入以下程式碼(預設版型): 
+
+```html
+  <!-- trek video ad container -->
+  <div id="video-default-template">
+  </div>
+  <!-- script -->
+  <script>
+    AotterTrek('nativeVideoAd', {
+      selector: '#video-default-template',
+      useDefaultTemplate: true,
+      onAdLoad: function() {},
+      onAdFail: function() {}
+    })
+  </script>
+  <!-- end: script -->
+```
+
+## 預設版型(淺色主題)
+
+```html
+  <!-- trek video ad container -->
+  <div id="video-default-template" data-theme="light"></div>
+  <!-- script -->
+  <script>
+    AotterTrek('nativeVideoAd', {
+      selector: '#video-default-template',
+      useDefaultTemplate: true,
+      onAdLoad: function() {},
+      onAdFail: function() {}
+    })
+  </script>
+  <!-- end: script -->
+```
+
+## 預設版型(深色主題)
+
+```html
+  <!-- trek video ad container -->
+  <div id="video-default-template" data-theme="dark"></div>
+  <!-- script -->
+  <script>
+    AotterTrek('nativeVideoAd', {
+      selector: '#video-default-template',
+      useDefaultTemplate: true,
+      onAdLoad: function() {},
+      onAdFail: function() {}
+    })
+  </script>
+  <!-- end: script -->
+```
+
+## 預設版型自訂樣式
+
+```html
+  <!-- trek video ad container -->
+  <div id="video-default-template"
+        data-theme="light"
+        data-font-size="14"
+        data-color="#333"
+        data-background="#FFF"
+        data-title-font-size="14"
+        data-title-color="#666666"
+        data-sponsor-color="#d4d4d4"
+        data-action-color="#fff"
+        data-action-border-color="#ababab"
+        data-action-background="#ababab"
+        data-action-font-size="13">
+  </div>
+  <!-- script -->
+  <script>
+    AotterTrek('nativeVideoAd', {
+      selector: '#video-default-template',
+      useDefaultTemplate: true,
+      onAdLoad: function() {},
+      onAdFail: function() {}
+    })
+  </script>
+  <!-- end: script -->
+```
+
+## 完整客製化
+
 
 ```html
 <!-- start: trek video ad -->
