@@ -1,5 +1,5 @@
 # 原生影片廣告
-## 預設版型安裝方式
+## 安裝方式 (預設版型)
 
 在 `head` 中加入以下程式碼
 
@@ -22,12 +22,12 @@
 
 ```html
   <!-- trek video ad container -->
-  <div id="video-default-template">
-  </div>
+  <div id="video-container"></div>
   <!-- script -->
   <script>
     AotterTrek('nativeVideoAd', {
-      selector: '#video-default-template',
+      selector: '#video-container',
+      //啟用預設版型
       useDefaultTemplate: true,
     })
   </script>
@@ -38,11 +38,11 @@
 
 ```html
   <!-- trek video ad container -->
-  <div id="video-default-template" data-theme="light"></div>
+  <div id="video-container" data-theme="light"></div>
   <!-- script -->
   <script>
     AotterTrek('nativeVideoAd', {
-      selector: '#video-default-template',
+      selector: '#video-container',
       useDefaultTemplate: true,
     })
   </script>
@@ -53,11 +53,11 @@
 
 ```html
   <!-- trek video ad container -->
-  <div id="video-default-template" data-theme="dark"></div>
+  <div id="video-container" data-theme="dark"></div>
   <!-- script -->
   <script>
     AotterTrek('nativeVideoAd', {
-      selector: '#video-default-template',
+      selector: '#video-container',
       useDefaultTemplate: true,
     })
   </script>
@@ -68,7 +68,7 @@
 
 ```html
   <!-- trek video ad container -->
-  <div id="video-default-template"
+  <div id="video-container"
         data-theme="light"
         data-font-size="14"
         data-color="#333"
@@ -84,7 +84,7 @@
   <!-- script -->
   <script>
     AotterTrek('nativeVideoAd', {
-      selector: '#video-default-template',
+      selector: '#video-container',
       useDefaultTemplate: true,
     })
   </script>
@@ -95,11 +95,11 @@
 
 ```html
   <!-- trek video ad container -->
-  <div id="video-default-template"></div>
+  <div id="video-container"></div>
   <!-- script -->
   <script>
     AotterTrek('nativeVideoAd', {
-      selector: '#video-default-template',
+      selector: '#video-container',
       useDefaultTemplate: true,
       onAdLoad: function(node) {
         //廣告載入成功時的callback
