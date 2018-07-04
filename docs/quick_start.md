@@ -12,6 +12,7 @@ The `AotterTrek` JavaScript SDK requires [jQuery](https://jquery.com/) as depend
     w[n] = w[n] || function() { (w[n].q = w[n].q || []).push(arguments) }; w[n].l = 1 * new Date();
     js.async = 1; js.src = src; ajs.parentNode.insertBefore(js, ajs)
   })(window, document, 'script', 'https://tkportal.aotter.net/public/2.4.0/sdk.js', 'AotterTrek');
+  AotterTrek('init');
 </script>
 ```
 
@@ -141,6 +142,6 @@ The `AotterTrek` JavaScript SDK requires [jQuery](https://jquery.com/) as depend
   });
 
   //track webpage data
-	AotterTrek('tracker');
+	AotterTrek('init');
 </script>
 ```

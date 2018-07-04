@@ -1,9 +1,9 @@
 
-### AotterTrek('tracker')
+### AotterTrek('init')
 傳送當前這個網頁的資訊
 #### example
 ```js
-AotterTrek('tracker');
+AotterTrek('init');
 ```
 
 ### AotterTrek('nativeAd', [options = {}])
@@ -51,7 +51,7 @@ AotterTrek('setUser', {
   gender: 'MALE'
 });
 
-AotterTrek('tracker');
+AotterTrek('init');
 
 AotterTrek('nativeAd', {
   selector: '#native-ad'

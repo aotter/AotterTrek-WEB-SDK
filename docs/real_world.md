@@ -15,5 +15,5 @@ AotterTrek('nativeAd', {
 });
 
 //分析網頁瀏覽資訊
-AotterTrek('tracker');
+AotterTrek('init');
 ```
