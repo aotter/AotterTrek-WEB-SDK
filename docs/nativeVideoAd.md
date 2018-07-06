@@ -12,63 +12,33 @@
     js = d.createElement(s); js.id = n;
     w[n] = w[n] || function() { (w[n].q = w[n].q || []).push(arguments) }; w[n].l = 1 * new Date();
     js.async = 1; js.src = src; ajs.parentNode.insertBefore(js, ajs)
-  })(window, document, 'script', 'https://tkportal.aotter.net/public/2.4.0/sdk.js', 'AotterTrek');
+  })(window, document, 'script', 'https://tkportal.aotter.net/public/2.5.0/sdk.js', 'AotterTrek');
   AotterTrek('init');
 </script>
 <!-- end: trek sdk -->
 ```
 
-在 `body` 中加入以下程式碼(預設版型): 
-
+在 `body` 中加入以下程式碼，包含 `[data-trek-ad="video"]` 的網頁元素會被轉換成影片廣告:
 ```html
-  <!-- trek video ad container -->
-  <div id="video-container"></div>
-  <!-- script -->
-  <script>
-    AotterTrek('nativeVideoAd', {
-      selector: '#video-container',
-      //啟用預設版型
-      useDefaultTemplate: true,
-    })
-  </script>
-  <!-- end: script -->
+<ins data-trek-ad="video" data-layout="prebuilt" data-place="placement_name"></ins>
 ```
 
-## 預設版型(淺色主題)
+## 影片廣告預設版型(淺色主題)
 
 ```html
-  <!-- trek video ad container -->
-  <div id="video-container" data-theme="light"></div>
-  <!-- script -->
-  <script>
-    AotterTrek('nativeVideoAd', {
-      selector: '#video-container',
-      useDefaultTemplate: true,
-    })
-  </script>
-  <!-- end: script -->
+<ins data-trek-ad="video" data-layout="prebuilt" data-place="placement_name" data-theme="light"></ins>
 ```
 
 ## 預設版型(深色主題)
-
 ```html
-  <!-- trek video ad container -->
-  <div id="video-container" data-theme="dark"></div>
-  <!-- script -->
-  <script>
-    AotterTrek('nativeVideoAd', {
-      selector: '#video-container',
-      useDefaultTemplate: true,
-    })
-  </script>
-  <!-- end: script -->
+<ins data-trek-ad="video" data-layout="prebuilt" data-place="placement_name" data-theme="dark"></ins>
 ```
 
-## 預設版型自訂樣式
+## 預設版型自訂樣式 (實驗階段功能)
 
 ```html
   <!-- trek video ad container -->
-  <div id="video-container"
+  <ins  data-trek-ad="video"
         data-theme="light"
         data-font-size="14"
         data-color="#333"
@@ -80,41 +50,38 @@
         data-action-border-color="#ababab"
         data-action-background="#ababab"
         data-action-font-size="13">
-  </div>
-  <!-- script -->
-  <script>
-    AotterTrek('nativeVideoAd', {
-      selector: '#video-container',
-      useDefaultTemplate: true,
-    })
-  </script>
-  <!-- end: script -->
+  </ins>
 ```
 
 ## 廣告載入成功、失敗的callback
 
 ```html
   <!-- trek video ad container -->
-  <div id="video-container"></div>
+  <ins data-trek-ad="video" data-layout="prebuilt" data-place="placement_name_1"></ins>
   <!-- script -->
   <script>
-    AotterTrek('nativeVideoAd', {
-      selector: '#video-container',
-      useDefaultTemplate: true,
-      onAdLoad: function(node) {
-        //廣告載入成功時的callback
-      },
-      onAdFail: function(node) {
-        //廣告載入失敗時的callback
-      }
-    })
+    AotterTrek(function(API) {
+
+      //監聽廣告載入成功事件
+      API.Event.on('onAdLoad', function(data) {
+        if (data.place === 'placement_name_1') {
+          //成功
+        }
+      });
+
+      //監聽廣告載入失敗事件
+      API.Event.on('onAdFail', function() {
+        if (data.place === 'placement_name_1') {
+          //錯誤處理
+        }
+      });
+
+    });
   </script>
   <!-- end: script -->
 ```
 
 ## 完整客製化
-
-
 ```html
 <!-- start: trek video ad -->
 <div>

@@ -1,8 +1,6 @@
-The `AotterTrek` JavaScript SDK requires [jQuery](https://jquery.com/) as dependency.
+## Install SDK
 
 ````html
-<!-- requires jQuery as dependency -->
-<script src="https://code.jquery.com/jquery.2.4.min.js"></script>
 <!-- sdk -->
 <script>
   (function(w, d, s, src, n) {
@@ -11,10 +9,35 @@ The `AotterTrek` JavaScript SDK requires [jQuery](https://jquery.com/) as depend
     js = d.createElement(s); js.id = n;
     w[n] = w[n] || function() { (w[n].q = w[n].q || []).push(arguments) }; w[n].l = 1 * new Date();
     js.async = 1; js.src = src; ajs.parentNode.insertBefore(js, ajs)
-  })(window, document, 'script', 'https://tkportal.aotter.net/public/2.4.0/sdk.js', 'AotterTrek');
+  })(window, document, 'script', 'https://tkportal.aotter.net/public/2.5.0/sdk.js', 'AotterTrek');
   AotterTrek('init');
 </script>
 ```
+
+## 快速使用預設的廣告版型
+`AotterTrek` 提供一個方便的預設廣告版型，可以直接使用。 
+
+```html
+<!-- sdk -->
+<script>
+  (function(w, d, s, src, n) {
+    var js, ajs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(n)) return;
+    js = d.createElement(s); js.id = n;
+    w[n] = w[n] || function() { (w[n].q = w[n].q || []).push(arguments) }; w[n].l = 1 * new Date();
+    js.async = 1; js.src = src; ajs.parentNode.insertBefore(js, ajs)
+  })(window, document, 'script', 'https://tkportal.aotter.net/public/2.5.0/sdk.js', 'AotterTrek');
+	AotterTrek('init');
+</script>
+```
+
+包含 `[data-trek-ad="native"]` 的網頁元素會被轉換成廣告。
+```html
+<ins data-trek-ad="native" data-layout="prebuilt" data-place="placement_name"></ins>
+```
+
+
+## 進階設定 (客製化)
 
 ### Demo html
 以下的程式碼片段，是一個簡單的原生廣告範例:
@@ -42,8 +65,6 @@ The `AotterTrek` JavaScript SDK requires [jQuery](https://jquery.com/) as depend
   </div>
 </a>
 
-<!-- requires jQuery as dependency -->
-<script src="https://code.jquery.com/jquery.2.4.min.js"></script>
 <!-- sdk -->
 <script>
   (function(w, d, s, src, n) {
@@ -52,7 +73,7 @@ The `AotterTrek` JavaScript SDK requires [jQuery](https://jquery.com/) as depend
     js = d.createElement(s); js.id = n;
     w[n] = w[n] || function() { (w[n].q = w[n].q || []).push(arguments) }; w[n].l = 1 * new Date();
     js.async = 1; js.src = src; ajs.parentNode.insertBefore(js, ajs)
-  })(window, document, 'script', 'https://tkportal.aotter.net/public/2.4.0/sdk.js', 'AotterTrek');
+  })(window, document, 'script', 'https://tkportal.aotter.net/public/2.5.0/sdk.js', 'AotterTrek');
 </script>
 <!-- init script  -->
 <script>
@@ -118,30 +139,3 @@ The `AotterTrek` JavaScript SDK requires [jQuery](https://jquery.com/) as depend
 </style>
 ```
 
-### 直接使用預設的廣告版型(Experimental)
-若不想客製化自己的廣告樣式， `AotterTrek` 提供一個預設的廣告版型，可以直接使用。
-
-```html
-
-<!-- requires jQuery as dependency -->
-<script src="https://code.jquery.com/jquery.2.4.min.js"></script>
-<!-- sdk -->
-<script>
-  (function(w, d, s, src, n) {
-    var js, ajs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(n)) return;
-    js = d.createElement(s); js.id = n;
-    w[n] = w[n] || function() { (w[n].q = w[n].q || []).push(arguments) }; w[n].l = 1 * new Date();
-    js.async = 1; js.src = src; ajs.parentNode.insertBefore(js, ajs)
-  })(window, document, 'script', 'https://tkportal.aotter.net/public/2.4.0/sdk.js', 'AotterTrek');
-
-  //render native ad
-  AotterTrek('nativeAd', {
-    selector: '#native-ad',
-    useDefaultTemplate: true
-  });
-
-  //track webpage data
-	AotterTrek('init');
-</script>
-```

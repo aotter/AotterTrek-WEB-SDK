@@ -1,6 +1,8 @@
 
 ### AotterTrek('init')
-傳送當前這個網頁的資訊
+初始化 AotterTrek，同時啟動追蹤碼、廣告。
+
+
 #### example
 ```js
 AotterTrek('init');
@@ -11,7 +13,7 @@ AotterTrek('init');
 #### arguments
 1. **[options = {}]** *( Object )*: 參數設定
 2. **[options.selector]** *( String | Element )*: The target element or selector
-3. **[options.useDefaultTemplate = false]** *( Boolean )*: 直接使用 *AotterTrek* 的預設廣告版型。
+3. **[options.layout = "prebuilt"]** *( String )*: 直接使用 *AotterTrek* 的預設廣告版型。
 4. **[options.place]** *( String )*: 自定版位名稱，可以在後台檢視此版位的成效。
 5. **[options.onAdLoad]** *( Function(node) )*: 廣告載入成功時呼叫。
 6. **[options.onAdFail]** *( Function(node) )*: 廣告載入失敗時呼叫。
@@ -23,7 +25,7 @@ AotterTrek('init');
 AotterTrek('nativeAd', {
 	selector: '#native-ad',
 	place: 'SIDEBAR_NATIVE_AD',
-	useDefaultTemplate: false,
+	layout: 'prebuilt',
 	onAdLoad: function(node) {
 		//$(node).show();
 	},
