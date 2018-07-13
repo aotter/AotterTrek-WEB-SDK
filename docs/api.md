@@ -1,11 +1,11 @@
 
-### AotterTrek('init')
+### AotterTrek('init', 'CLIENT_ID')
 初始化 AotterTrek，同時啟動追蹤碼、廣告。
 
 
 #### example
 ```js
-AotterTrek('init');
+AotterTrek('init', 'CLIENT_ID');
 ```
 
 ### AotterTrek('nativeAd', [options = {}])
@@ -53,7 +53,7 @@ AotterTrek('setUser', {
   gender: 'MALE'
 });
 
-AotterTrek('init');
+AotterTrek('init', 'CLIENT_ID');
 
 AotterTrek('nativeAd', {
   selector: '#native-ad'
