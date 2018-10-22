@@ -8,10 +8,10 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">AotterTrek('nativeVideoAd')</h1>
         </header>
-        <p className="App-intro">
+        <div className="App-intro">
           <h1>Should load video</h1>
           <AotterTrekVideoAd />
-        </p>
+        </div>
       </div>
     );
   }
@@ -26,15 +26,16 @@ class AotterTrekVideoAd extends Component {
   }
 
   componentDidMount() {
-    
+  
     const { AotterTrek } = window;
+    const node = this.ad.current;
 
-    AotterTrek('nativeVideoAd', {
-      selector: this.ad
+    AotterTrek('videoAd', {
+      selector: node
     });
 
     AotterTrek(function(API) {
-      API.Event.on('onAdLoad', function(data) {
+      API.Event.on('onAdLoad', function() {
         console.log('onAdLoad')
       });
       API.Event.on('onAdFail', function() {

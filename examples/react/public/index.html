@@ -29,8 +29,13 @@
         js = d.createElement(s); js.id = n;
         w[n] = w[n] || function() { (w[n].q = w[n].q || []).push(arguments) }; w[n].l = 1 * new Date();
         js.async = 1; js.src = src; ajs.parentNode.insertBefore(js, ajs)
-      })(window, document, 'script', 'https://tkportal.aotter.net/public/3.0.0/sdk.js', 'AotterTrek');
-      AotterTrek('init', 'yEFcFoJaruNorh5RqtuR');
+      })(window, document, 'script', 'https://tkportal.aotter.net/public/3.1.0/sdk.js', 'AotterTrek');
+
+      /**
+       *  Set { ads: false } to prevent initial AD parsing.
+       **/
+      AotterTrek('init', { clientId: 'yEFcFoJaruNorh5RqtuR', ads: false });
+      
     </script>
     <!-- end: trek sdk -->
 
