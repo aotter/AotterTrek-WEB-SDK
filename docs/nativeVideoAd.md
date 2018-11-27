@@ -70,7 +70,7 @@
       });
 
       //監聽廣告載入失敗事件
-      API.Event.on('onAdFail', function() {
+      API.Event.on('onAdFail', function(data) {
         if (data.place === 'placement_name_1') {
           //錯誤處理
         }
